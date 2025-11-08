@@ -1062,9 +1062,9 @@ class App:
         
         ESTRUCTURA MÉDICA:
         Y=6: Síntomas iniciales leves (dolor_oido, zumbido)
-        Y=4.5: Síntomas intermedios (presion_oido, fiebre, perdida_audicion)
-        Y=3: Escalofríos (puede empeorar)
-        Y=1.5: Síntomas graves (oido_tapado, dolor_punzante, fiebre_alta)
+        Y=4.5: Síntomas intermedios (presion_oido, perdida_audicion)
+        Y=3: Resfriado (puede empeorar)
+        Y=1.5: Síntomas graves (oido_tapado, dolor_punzante, secrecion_nasal)
         Y=0: Secreción (crítico)
         Y=-2: OTITIS (único diagnóstico explícito)
         
@@ -1077,16 +1077,15 @@ class App:
             
             # NIVEL 2 (Y=4.5): Síntomas intermedios
             'presion_oido': (2, 4.5),
-            'fiebre': (6, 4.5),
             'perdida_audicion': (10, 4.5),
             
-            # NIVEL 2.5 (Y=3): Escalofríos (evoluciona)
-            'escalofrios': (8, 3),
+            # NIVEL 2.5 (Y=3): Resfriado (evoluciona)
+            'resfriado': (8, 3),
             
             # NIVEL 3 (Y=1.5): Síntomas graves
             'oido_tapado': (2, 1.5),
             'dolor_punzante': (5, 1.5),
-            'fiebre_alta': (8, 1.5),
+            'secrecion_nasal': (8, 1.5),
             
             # NIVEL 4 (Y=0): Síntoma crítico
             'secrecion': (6, 0),

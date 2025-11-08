@@ -21,7 +21,7 @@ class AgenteOtitis:
         Si el algoritmo NO llega a OTITIS después de explorar = SANO (sin nodo explícito)
         
         EJEMPLO:
-        - escalofrios → fiebre_alta → secrecion → OTITIS
+        - resfriado → secrecion_nasal → secrecion → OTITIS
         - dolor_oido → dolor_punzante → secrecion → OTITIS  
         - Si termina la exploración sin llegar a OTITIS = SANO
         """
@@ -32,16 +32,15 @@ class AgenteOtitis:
             
             # NIVEL 2: Síntomas intermedios
             "presion_oido": ["oido_tapado", "dolor_punzante"],
-            "fiebre": ["fiebre_alta", "escalofrios"],
             "perdida_audicion": ["oido_tapado"],
             
-            # NIVEL 2.5: Síntomas que pueden empeorar
-            "escalofrios": ["fiebre_alta"],
+            # NIVEL 2.5: Resfriado (puede empeorar)
+            "resfriado": ["secrecion_nasal"],
             
             # NIVEL 3: Síntomas graves - Pueden llevar a OTITIS
             "oido_tapado": ["secrecion"],
-            "dolor_punzante": ["secrecion", "OTITIS"],  # Dolor agudo, puede ir directo
-            "fiebre_alta": ["secrecion"],
+            "dolor_punzante": ["secrecion"],  # Dolor agudo va a secreción
+            "secrecion_nasal": ["secrecion"],
             
             # NIVEL 4: Síntoma crítico
             "secrecion": ["OTITIS"],  # Secreción del oído → OTITIS
@@ -55,12 +54,11 @@ class AgenteOtitis:
             "dolor_oido": 0.3,
             "zumbido": 0.2,
             "presion_oido": 0.4,
-            "fiebre": 0.3,
+            "resfriado": 0.25,
             "perdida_audicion": 0.4,
             "oido_tapado": 0.5,
             "dolor_punzante": 0.7,
-            "fiebre_alta": 0.6,
-            "escalofrios": 0.25,
+            "secrecion_nasal": 0.6,
             "secrecion": 0.9,
             "OTITIS": 1.0
         }
