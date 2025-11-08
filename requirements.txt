@@ -1,0 +1,3 @@
+matplotlib
+networkx
+# tkinter no se instala vía pip en Windows (va con Python)
