@@ -522,8 +522,6 @@ evaluar_diagnostico_interactivo :-
         write('DIAGNOSTICO: OTITIS CONFIRMADA'), nl,
         write('========================================'), nl,
         construir_camino_diagnostico(TodosSintomas, Camino),
-        nl, write('Camino de sintomas detectado:'), nl,
-        mostrar_camino(Camino), nl,
         calcular_probabilidad_camino(Camino, Prob),
         ProbPct is Prob * 100,
         format('Probabilidad: ~2f%~n', [ProbPct]), nl,
